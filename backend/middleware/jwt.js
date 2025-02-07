@@ -13,8 +13,7 @@ exports.validateToken = (req, res, next) => {
             res.status(403).json({ success: false, message: "Token is invalid" });
             return;
         }
-        const { id } = payload;
-        req.auth = id;
+        req.auth = payload;
         next();
 
     } catch (error) {
